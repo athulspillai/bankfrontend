@@ -1,0 +1,62 @@
+<!--Navigation-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="col-lg-11">
+            <a class="navbar-brand" routerLink="/dashboard">
+                <img src="https://cdn-icons-png.flaticon.com/128/4108/4108843.png" alt="Logo" width="50" height="50"
+                    class="d-inline-block align-text-top">
+                &nbsp;
+                Online Banking App
+            </a>
+
+        </div>
+    </div>
+</nav>
+
+<!---transaction body-->
+<div class="container-fluid-mt-2">
+    <h1 class="text-primary"> Transactions</h1>
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam animi dolor odio
+        obcaecati nihil, similique a laudantium soluta? Odio similique eos unde necessitatibus itaque tempora
+        consequuntur doloribus, iure neque veniam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+        eveniet ratione ipsum, velit mollitia corporis soluta asperiores blanditiis consequuntur. Eius corrupti
+        voluptate illo quibusdam iure, sint reiciendis maxime vero aliquam Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Iusto repellendus rem sequi molestias deserunt laudantium nisi quas reprehenderit quia
+        consectetur quos fuga perspiciatis alias dolore nulla, at esse consequatur sit!
+    </p>
+    <div class="container border p-3 mt-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <h1 class="text-success">Transaction History</h1>
+            </div>
+            <div class="col-lg-4">
+                <label for="search">Search By:</label>&nbsp;
+                <input (keyup)="search($event)"  id="search" type="text" placeholder="Transaction Type">
+            </div>
+            <div class="col-lg-4">
+                <input (click)="generatepdf()" value="Export" type="text" class="btn btn-success">
+            </div>
+        </div>
+        <!--table-->
+        <table class="table border mt-3 text-center">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Transaction Type</th>
+                    <th>From Account</th>
+                    <th>To Account</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of alltransaction | filter :searchKey:'type'; let i = index">
+                    <th>{{i+1}}</th>
+                    <th>{{transaction.type}}</th>
+                    <th>{{transaction.fromacno}}</th>
+                    <th>{{transaction.toacno}}</th>
+                    <th>{{transaction.amount}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+</div>

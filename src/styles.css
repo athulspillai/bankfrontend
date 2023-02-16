@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Island+Moments&family=Merriweather:wght@300&family=Noto+Sans:wght@100&family=Raleway:wght@200&family=Roboto+Condensed&family=Trispace:wght@600&family=Zen+Dots&display=swap');
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
